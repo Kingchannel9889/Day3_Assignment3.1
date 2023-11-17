@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Visibility Demo</title>
+</head>
+<body>
+    <script>
+        // Global variable
+        var globalVariable = "This is the global variable";
+
+        function demonstrateVisibility() {
+            // Local variable
+            var localVariable = "This is the local variable";
+
+            // Display both variables
+            document.write("<p>Global Variable: " + globalVariable + "</p>");
+            document.write("<p>Local Variable: " + localVariable + "</p>");
+        }
+
+        // Call the function to demonstrate variable visibility
+        demonstrateVisibility();
+
+        // Try to access the local variable outside the function (will result in an error)
+        // document.write("<p>Attempt to access Local Variable outside the function: " + localVariable + "</p>");
+    </script>
+</body>
+</html>

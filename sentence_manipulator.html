@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentence Manipulator</title>
+</head>
+<body>
+    <center>
+        <h1>Welcome to the Sentence Character Counter!</h1>
+        <form id="sentence_counter">
+            <label for="user-input" class="Q1">Please enter your sentence:</label>
+            <br>
+            <textarea id="user-input" rows="4" cols="50"></textarea>
+            <br>
+            <button id="count-button">Count Characters</button>
+            <button id="reset-button">Reset</button>
+        </form>
+        <p id="character-count"></p>
+    </center>
+
+    <script>
+        const countButton = document.getElementById("count-button");
+        const resetButton = document.getElementById("reset-button");
+        const characterCount = document.getElementById("character-count");
+
+        countButton.addEventListener("click", function () {
+            let sentence = document.getElementById("user-input").value;
+            let characterCountValue = sentence.length;
+            characterCount.textContent = `Character Count: ${characterCountValue}`;
+        });
+
+        resetButton.addEventListener("click", function () {
+            document.getElementById("user-input").value = "";
+            characterCount.textContent = "Character Count: ";
+        });
+    </script>
+</body>
+</html>

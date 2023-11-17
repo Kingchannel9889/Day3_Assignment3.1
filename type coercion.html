@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Coercion Demo</title>
+</head>
+<body>
+    <center>
+        <h1>Type Coercion Demo</h1>
+        <form id="coercionForm">
+            <label for="numberInput">Enter a number:</label>
+            <input type="text" id="numberInput" name="numberInput" required>
+            <br>
+            <label for="stringNumberInput">Enter a number in string:</label>
+            <input type="text" id="stringNumberInput" name="stringNumberInput" required>
+            <br>
+            <button type="button" onclick="calculate()">Calculate</button>
+            <button type="button" onclick="resetForm()">Reset</button>
+        </form>
+        <p id="result"></p>
+
+        <script>
+            function calculate() {
+                
+                var number = document.getElementById("numberInput").value;
+                var stringNumber = document.getElementById("stringNumberInput").value;
+
+                var result = number + stringNumber;
+
+                
+                document.getElementById("result").textContent = "Result of Concatenation: " + result;
+            }
+
+            function resetForm() {
+                document.getElementById("coercionForm").reset();
+                document.getElementById("result").textContent = "";
+            }
+        </script>
+    </center>
+</body>
+</html>

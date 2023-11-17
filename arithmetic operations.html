@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic Operations</title>
+</head>
+<body>
+    <center>
+        <h1>Welcome To Our JavaScript Calculator!</h1>
+        <form id="calculatorForm">
+            <label for="num1">Enter your first number:</label>
+            <input type="text" id="num1">
+            <br>
+            <br>
+            <label for="num2">Enter your second number:</label>
+            <input type="text" id="num2">
+            <br>
+            <br>
+            <label>What Arithmetic Operation do you want to choose?
+                <select id="operation" name="referrer">
+                    <option value="#" disabled selected>(select one)</option>
+                    <option value="1" id="add">Addition</option>
+                    <option value="2" id="sub">Subtraction</option>
+                    <option value="3" id="mul">Multiplication</option>
+                    <option value="4" id="div">Division</option>
+                </select>
+            </label>
+
+            <button type="button" onclick="cal()">Calculate</button>
+            <button type="button" onclick="resetForm()">Reset</button>
+        </form>
+        <p id="answer"></p>
+    </center>
+
+    <script>
+        function cal() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var ope = document.getElementById("operation").value;
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("answer").textContent = "Your input is invalid.";
+                return;
+            }
+
+            if (ope === "1") {
+                document.getElementById("answer").innerHTML = "Here is your answer: " + num1 + num2;
+            } else if (ope === "2") {
+                document.getElementById("answer").innerHTML = "Here is your answer: " + num1 - num2;
+            } else if (ope === "3") {
+                document.getElementById("answer").innerHTML = "Here is your answer: " + num1 * num2;
+            } else if (ope === "4") {
+                if (num2 !== 0) {
+                    document.getElementById("answer").innerHTML = "Here is your answer: " + num1 / num2;
+                } else {
+                    document.getElementById("answer").textContent = "Division by zero is not allowed.";
+                }
+            } else {
+                document.getElementById("answer").textContent = "Your input is wrong.";
+            }
+        }
+
+        function resetForm() {
+            document.getElementById("calculatorForm").reset();
+            document.getElementById("answer").textContent = "";
+        }
+    </script>
+</body>
+</html>
